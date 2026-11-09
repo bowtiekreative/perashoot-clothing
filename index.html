@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PERASHOOT — Coming Soon</title>
+  <meta name="description" content="PERASHOOT. A high-end clothing line. Toronto, Los Angeles, New York, London. Coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0b0a;
+      --ink: #efe8dc;
+      --mute: #9a9184;
+      --hair: rgba(239, 232, 220, 0.22);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    body {
+      font-family: Outfit, system-ui, sans-serif;
+      font-weight: 300;
+      min-height: 100dvh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: clamp(1.25rem, 4vw, 2.75rem);
+    }
+
+    header, footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 0.68rem;
+      color: var(--mute);
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    h1 {
+      font-family: "Bodoni Moda", "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 11vw, 8.5rem);
+      letter-spacing: 0.18em;
+      line-height: 0.92;
+      text-indent: 0.18em;
+      text-wrap: pretty;
+    }
+
+    .rule {
+      width: min(28rem, 62vw);
+      height: 1px;
+      background: var(--hair);
+      margin: clamp(1.6rem, 4vh, 2.6rem) auto;
+    }
+
+    .cities {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.55rem 1.75rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-size: clamp(0.62rem, 1.6vw, 0.78rem);
+      color: var(--ink);
+    }
+
+    .soon {
+      margin-top: clamp(1.8rem, 4.5vh, 3rem);
+      letter-spacing: 0.46em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      color: var(--mute);
+    }
+
+    footer span:last-child { letter-spacing: 0.22em; }
+
+    @media (max-width: 640px) {
+      h1 { letter-spacing: 0.12em; text-indent: 0.12em; }
+      .cities { gap: 0.7rem 1.2rem; letter-spacing: 0.22em; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      h1, .cities, .soon {
+        animation: rise 1.1s ease both;
+      }
+      .cities { animation-delay: 0.12s; }
+      .soon { animation-delay: 0.24s; }
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span>Perashoot</span>
+    <span>Clothing</span>
+  </header>
+  <main>
+    <h1>PERASHOOT</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="cities">
+      <span>Toronto</span>
+      <span>Los Angeles</span>
+      <span>New York</span>
+      <span>London</span>
+    </p>
+    <p class="soon">Coming soon</p>
+  </main>
+  <footer>
+    <span>Est. MMXXVI</span>
+    <span>All rights reserved</span>
+  </footer>
+</body>
+</html>
